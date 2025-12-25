@@ -17,11 +17,11 @@
         <title>Hello there!</title>
         <link rel="stylesheet" href="styles.css" />
         <style>
-            /* Smooth fade for the link text changing */
+
             .nleft a, .nright a {
                 transition: opacity 0.3s ease;
             }
-            /* Add pointer cursor to Social Media to show it's clickable */
+
             #link-social {
                 cursor: pointer;
             }
@@ -99,7 +99,6 @@
         </footer>
 
         <script>
-            // --- 1. EXISTING SCRIPT (WORD WRAPPER) ---
             const paragraphs = document.querySelectorAll("p");
 
             paragraphs.forEach((p) => {
@@ -111,14 +110,13 @@
                     .join(" ");
             });
 
-            // --- 2. SOCIAL MEDIA TOGGLE SCRIPT ---
             
             const workBtn = document.getElementById('link-work');
             const photoBtn = document.getElementById('link-photo');
             const passionBtn = document.getElementById('link-passion');
             const socialBtn = document.getElementById('link-social');
 
-            // Store original links to restore them later
+
             const originalLinks = {
                 work: { text: "Work", href: "#" },
                 photo: { text: "Photographs", href: "photography.html" },
@@ -126,46 +124,30 @@
             };
 
             socialBtn.addEventListener('click', function(event) {
-                event.preventDefault(); // Stop page reload
-                
-                // CHECK STATE: We check the text of the first button to know what mode we are in.
-                // If it says "Work", we are in Default Mode -> Switch to Socials.
-                // If it says "LinkedIn", we are in Social Mode -> Switch back.
+                event.preventDefault(); 
 
                 if (workBtn.innerText === "Work") {
-                    // === SWITCH TO SOCIAL MODE ===
-                    
-                    // Work -> LinkedIn
                     workBtn.innerText = "LinkedIn";
                     workBtn.href = "https://www.linkedin.com/in/muhammed-zain-aman-k-m/";
                     workBtn.target = "_blank"; 
 
-                    // Photographs -> Instagram
                     photoBtn.innerText = "Instagram";
                     photoBtn.href = "https://www.instagram.com/zaynamann";
                     photoBtn.target = "_blank";
 
-                    // Passion -> Telegram (Replaced Twitter)
                     passionBtn.innerText = "Telegram";
                     passionBtn.href = "https://t.me/zaynaman";
                     passionBtn.target = "_blank";
 
-                    // Social Media -> Stays same, just acts as the toggle
-                    
                 } else {
-                    // === SWITCH BACK TO DEFAULT MODE ===
 
-                    // Restore Work
                     workBtn.innerText = originalLinks.work.text;
                     workBtn.href = originalLinks.work.href;
-                    workBtn.target = "_self"; // Restore normal link behavior
-
-                    // Restore Photographs
+                    workBtn.target = "_self"; 
                     photoBtn.innerText = originalLinks.photo.text;
                     photoBtn.href = originalLinks.photo.href;
                     photoBtn.target = "_self";
 
-                    // Restore Passion
                     passionBtn.innerText = originalLinks.passion.text;
                     passionBtn.href = originalLinks.passion.href;
                     passionBtn.target = "_self";
