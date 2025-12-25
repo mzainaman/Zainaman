@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+            rel="stylesheet"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style>
+            body {
+                height: 100vh;
+                margin: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            p {
+                font-family: "Space Mono", monospace;
+                font-size: 50px;
+            }
+            p span:hover {
+                color: royalblue;
+            }
+            ::selection {
+                background-color: royalblue;
+                color: #F5DEB3;
+            }
+        </style>
+</head>
+<body>
+    <p>In the making.</p>
+    <script>
+                    const paragraphs = document.querySelectorAll("p");
+
+            paragraphs.forEach((p) => {
+                const words = p.textContent
+                    .split(" ")
+                    .filter((word) => word.length > 0);
+                p.innerHTML = words
+                    .map((word) => `<span>${word}</span>`)
+                    .join(" ");
+            });
+    </script>
+</body>
+</html>

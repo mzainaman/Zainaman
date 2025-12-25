@@ -1,0 +1,176 @@
+<html lang="en">
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+            rel="stylesheet"
+        />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Hello there!</title>
+        <link rel="stylesheet" href="styles.css" />
+        <style>
+            /* Smooth fade for the link text changing */
+            .nleft a, .nright a {
+                transition: opacity 0.3s ease;
+            }
+            /* Add pointer cursor to Social Media to show it's clickable */
+            #link-social {
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="welcome">
+            <h1>Welcome</h1>
+        </div>
+        <div class="profile-section">
+            <div class="pleft">
+                <nav class="nleft">
+                    <ul>
+                        <li><a href="default.html" id="link-work">Work</a></li>
+                        <li><a href="photography.html" id="link-photo">Photographs</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="pcenter">
+                <img
+                    src="images/selfportraitopp-modified.png"
+                    alt="My portrait"
+                />
+            </div>
+            <div class="pright">
+                <nav class="nright">
+                    <ul>
+                        <li><a href="default.html" id="link-passion">Passion</a></li>
+                        <li><a href="#" id="link-social">Social Media</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <p>I'm Muhammed Zain Aman K M</p>
+        <hr />
+        <p>
+            I am a student of science at the Indian Institute of Science Education
+            and Research. I am interested in Physics and Computer Science, and
+            <span>colors—despite this page looking rather brutalist</span>.
+        </p>
+        <p>
+            I love photography, even though I am still an amateur. Landscape
+            photography is something that I adore doing even if it is with a
+            2000s camera (especially if it is with a 2000s camera). I am also a
+            member of the Photography club of my college.
+        </p>
+        <p>
+            I try to pick up a new language every once in a while, including
+            Russian, German, and Chinese. Currently I am learning Russian—for
+            the literature, of course.
+        </p>
+        <p>
+            In Computer Science, the first programming language I learned is
+            C++, and then went on to learn JavaScript. I learned basic Python
+            along the way and only had to dedicate time for it for some niche
+            areas. I still prefer C++ over any other high or low level
+            langauges—C++ over python any day.
+        </p>
+        <p>
+            Reading has always been one of my favorite pursuits, mostly Science
+            Fiction and Non-fiction. And I am a big Dostoevskian.
+        </p>
+        <p
+            class="russian"
+            style="
+                font-family: &quot;Anonymous Pro&quot;, &quot;Monospace&quot;;
+                font-size: 22px;
+            "
+        >
+            Этот сайт намеренно создан в таком стиле, и я хочу, чтобы он оставался таким и в будущем. Любые изменения, которые я захочу внести, появятся на новом сайте, который сейчас находится в разработке.
+        </p>
+
+        <footer>
+            <p>&copy; 2025 Muhammed Zain Aman K M.</p>
+        </footer>
+
+        <script>
+            // --- 1. EXISTING SCRIPT (WORD WRAPPER) ---
+            const paragraphs = document.querySelectorAll("p");
+
+            paragraphs.forEach((p) => {
+                const words = p.textContent
+                    .split(" ")
+                    .filter((word) => word.length > 0);
+                p.innerHTML = words
+                    .map((word) => `<span>${word}</span>`)
+                    .join(" ");
+            });
+
+            // --- 2. SOCIAL MEDIA TOGGLE SCRIPT ---
+            
+            const workBtn = document.getElementById('link-work');
+            const photoBtn = document.getElementById('link-photo');
+            const passionBtn = document.getElementById('link-passion');
+            const socialBtn = document.getElementById('link-social');
+
+            // Store original links to restore them later
+            const originalLinks = {
+                work: { text: "Work", href: "#" },
+                photo: { text: "Photographs", href: "photography.html" },
+                passion: { text: "Passion", href: "passion.html" }
+            };
+
+            socialBtn.addEventListener('click', function(event) {
+                event.preventDefault(); // Stop page reload
+                
+                // CHECK STATE: We check the text of the first button to know what mode we are in.
+                // If it says "Work", we are in Default Mode -> Switch to Socials.
+                // If it says "LinkedIn", we are in Social Mode -> Switch back.
+
+                if (workBtn.innerText === "Work") {
+                    // === SWITCH TO SOCIAL MODE ===
+                    
+                    // Work -> LinkedIn
+                    workBtn.innerText = "LinkedIn";
+                    workBtn.href = "https://www.linkedin.com/in/muhammed-zain-aman-k-m/";
+                    workBtn.target = "_blank"; 
+
+                    // Photographs -> Instagram
+                    photoBtn.innerText = "Instagram";
+                    photoBtn.href = "https://www.instagram.com/zaynamann";
+                    photoBtn.target = "_blank";
+
+                    // Passion -> Telegram (Replaced Twitter)
+                    passionBtn.innerText = "Telegram";
+                    passionBtn.href = "https://t.me/zaynaman";
+                    passionBtn.target = "_blank";
+
+                    // Social Media -> Stays same, just acts as the toggle
+                    
+                } else {
+                    // === SWITCH BACK TO DEFAULT MODE ===
+
+                    // Restore Work
+                    workBtn.innerText = originalLinks.work.text;
+                    workBtn.href = originalLinks.work.href;
+                    workBtn.target = "_self"; // Restore normal link behavior
+
+                    // Restore Photographs
+                    photoBtn.innerText = originalLinks.photo.text;
+                    photoBtn.href = originalLinks.photo.href;
+                    photoBtn.target = "_self";
+
+                    // Restore Passion
+                    passionBtn.innerText = originalLinks.passion.text;
+                    passionBtn.href = originalLinks.passion.href;
+                    passionBtn.target = "_self";
+                }
+            });
+        </script>
+    </body>
+</html>

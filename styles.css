@@ -1,0 +1,127 @@
+img {
+    width: 175px;
+    border-radius: 50%;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 0 0 0 yellowgreen;
+}
+
+img:hover {
+    box-shadow: 0 0 0 4px yellowgreen;
+    
+}
+
+body {
+    background-color: rgb(239, 239, 239);
+}
+
+.profile-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.pleft, .pright {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul {
+    list-style-type: none;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    font-family: "Space mono", monospace;
+    font-weight: 600;
+    font-size: 18px;
+    text-decoration: none;
+    color: #020014;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    text-decoration: dotted underline;
+    text-decoration-thickness: 4px;
+    color: yellowgreen;
+    transition: color 0.3s ease;
+}
+
+.nleft li a, .nright li a {
+    text-align: center;
+    display: block;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+p {
+    font-family: "Space Mono", monospace;
+    font-weight: 500;
+    text-align: center;
+    font-size: 18px;
+    margin: 20px;
+}
+
+h1 {
+    font-family: "Space Mono", monospace;
+    text-align: center;
+    color: aliceblue;
+    margin: 0;
+    padding: 12px 0;
+}
+
+.welcome {
+    background: #020014;
+    transition: background 0.3s ease;
+}
+
+.welcome:hover {
+    background-color: yellowgreen;
+}
+
+
+.welcome:hover h1 {
+    color: #020014;
+    text-decoration: dotted underline;
+    text-decoration-thickness: 5px;
+}
+
+hr {
+    width: 50%;
+    margin: 30px auto;
+    border: none;
+    border-top: 1px solid #ddd;
+}
+
+p span:hover {
+    color: yellowgreen;
+}
+
+::selection {
+    background-color: yellowgreen;
+}
+
+
+.russian span {
+    text-decoration: dotted underline;
+    text-decoration-color: #030020;
+    text-decoration-thickness: 2px;
+}
+
+footer p {
+    padding-top: 10px;
+    padding-bottom: 0px;
+    font-weight: 100;
+    font-size: 12px;
+}
+
+::selection {
+    background-color: #020014;
+    color: yellowgreen;
+}
+

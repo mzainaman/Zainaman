@@ -1,0 +1,172 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+body {
+            background: #f5f5f5;
+            font-family: "Space Mono", monospace;
+        }
+        h1 {
+            font-family: "Space Mono", monospace;
+            text-align: center;
+            color: aliceblue;
+            margin: 0;
+            padding: 12px 0;
+        }
+
+        .photography-headline {
+            background: #020014;
+            transition: background 0.3s ease;
+        }
+
+        .photography-headline:hover {
+            background-color: yellowgreen;
+        }
+
+        .photography-headline h1:hover {
+            color: #020014;
+            text-decoration: dotted underline;
+            text-decoration-thickness: 5px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 40px 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            cursor: pointer;
+            border-radius: 8px;
+            box-shadow: 0 0 0 0 yellowgreen;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            /* transform: translateY(-5px); */
+            box-shadow: 0 0 0 4px yellowgreen;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Lightbox Modal */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                /* transform: scale(0.8); */
+                opacity: 0;
+            }
+            to {
+                /* transform: scale(1); */
+                opacity: 1;
+            }
+        }
+
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 90vh;
+            object-fit: contain;
+            /* border: 4px solid yellowgreen; */
+            /* border-radius: 4px; */
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            font-size: 40px;
+            color: aliceblue;
+            cursor: pointer;
+            z-index: 1001;
+            transition: transform 0.2s ease;
+        }
+
+
+        .lightbox-close:hover {
+            color: yellowgreen;
+            transform: scale(1.2);
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 50px;
+            color: aliceblue;
+            cursor: pointer;
+            padding: 20px;
+            user-select: none;
+            transition: transform 0.2s ease;
+        }
+
+        .lightbox-nav:hover {
+            color: yellowgreen;
+            transform: translateY(-50%) scale(1.2);
+        }
+
+        .lightbox-prev {
+            left: 20px;
+        }
+
+        .lightbox-next {
+            right: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .gallery {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 15px;
+                padding: 20px 10px;
+            }
+
+            .gallery-item {
+                height: 250px;
+            }
+
+            .lightbox-close {
+                top: 10px;
+                right: 20px;
+                font-size: 30px;
+            }
+
+            .lightbox-nav {
+                font-size: 35px;
+            }
+        }
